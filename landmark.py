@@ -33,6 +33,7 @@ for (i, rect) in enumerate(rects):
 	shape = predictor(gray, rect)
 	shape = face_utils.shape_to_np(shape)
 
+	
 	(x, y, w, h) = face_utils.rect_to_bb(rect)
 	cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
@@ -41,6 +42,7 @@ for (i, rect) in enumerate(rects):
 
 	for (x, y) in shape:
 		cv2.circle(image, (x, y), 1, (255, 0,0), -1)
+	
 
 cv2.imshow("Output", image)
 cv2.waitKey(0)
